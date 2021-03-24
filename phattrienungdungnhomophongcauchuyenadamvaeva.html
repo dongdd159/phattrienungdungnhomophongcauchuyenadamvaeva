@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<div id="game"></div>
+<script >
+    function Apple(){
+        this.weight = 10
+        this.setWeight = function (weight){
+            return this.weight=weight
+        }
+        this.decrease = function (){
+            this.weight--
+        }
+        this.isEmpty = function (){
+            return this.weight == 0
+        }
+        this.getWeight = function (){
+            return this.weight
+        }
+    }
+    function Human(name, gender, weight){
+        this.name = name
+        this.gender = gender
+        this.weight = weight
+        this.setGender= function (gender){
+            this.gender = gender
+        }
+        this.isMale = function (){
+            if (this.gender == 1){
+                return true
+            }else {
+                return false
+            }
+        }
+        this.checkApple= function (apple){
+            return apple.getWeight();
+        }
+        this.eat = function (apple){
+            if (!apple.isEmpty()){
+                this.weight++
+                apple.decrease()
+            }else {
+                console.log("ko con tao")
+            }
+        }
+        this.say = function (talk){
+            console.log(talk)
+        }
+        this.getName=function (){
+            return this.name
+        }
+        this.setName=function (name){
+            this.name=name
+        }
+        this.getWeight = function (){
+            return this.weight
+        }
+        this.setWeight = function (weight){
+            this.weight=weight
+        }
+        this.getsbname = function (person){
+            return person.getName()
+        }
+        this.getsbngender = function (person){
+            if (person.isMale()){
+                return 1
+            }else {
+                return 0
+            }
+        }
+        this.getsbweight = function (person){
+            return person.getWeight()
+        }
+    }
+    let apple = new Apple()
+    let adam = new Human("Adam", 1, 54)
+    let eva = new Human("Eva", 0, 45)
+    adam.say("asfsa")
+    eva.say("sfs")
+    adam.eat(apple)
+    eva.eat(apple)
+    adam.eat(apple)
+    eva.eat(apple)
+    eva.eat(apple)
+    eva.eat(apple)
+    eva.eat(apple)
+    eva.eat(apple)
+    eva.eat(apple)
+    eva.eat(apple)
+    eva.eat(apple)
+    console.log(adam.checkApple(apple))
+</script>
+</body>
+</html>
